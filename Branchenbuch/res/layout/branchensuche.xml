@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    style="@style/DesignForText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundYellow"
+    android:gravity="left"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:tag="@string/Branche" >
+
+    <ImageButton
+        android:id="@+id/bank"
+        style="@style/DesingForButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button1"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/finanzen"
+        android:tag="@string/money" />
+
+    <ImageButton
+        android:id="@+id/button1"
+        style="@style/DesingForButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_auto"
+        android:tag="@string/serviceStation"  />
+
+    <TextView
+        android:id="@+id/Restaurant"
+        style="@style/DesingForTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:text="@string/imbiss"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/carTitel"
+        style="@style/DesingForTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/serviceStation"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/button3"
+        style="@style/DesingForButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Restaurant"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_food"
+        android:tag="@string/food" />
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/DesingForTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categoryList"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:text="alle Kategorien"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/bankTitel"
+        style="@style/DesingForTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Restaurant"
+        android:layout_alignBottom="@+id/Restaurant"
+        android:layout_alignRight="@+id/bank"
+        android:text="@string/money"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/smallText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button3"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="50dp"
+        android:text="@string/sucheVorort"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignRight="@+id/carTitel"
+        android:text="@string/Schalter"
+        android:textOff="OFF"
+        android:textOn="ON" />
+
+    <ImageButton
+        android:id="@+id/categoryList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Restaurant"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/a_bis_z" />
+
+</RelativeLayout>

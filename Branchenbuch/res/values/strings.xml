@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UPA Verlag</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <color name="BlueColor">#004785</color>
+    <color name="WhiteColor">#eceded</color>
+
+    <string name="Branche">Branchensuche</string>
+    <string name="directSearche">Erweiterte Suche</string>
+    <string name="sucheVorort">Suche Vorort</string>
+    <string name="ortWechseln">Ort wechseln</string>
+    <string name="Schalter">Schalter</string>
+    <string name="food">Essen und Trinken</string>
+    <string name="serviceStation">Auto und Werkstatt</string>
+
+    <color name="BackgroundYellow">#ffde00</color>
+
+    <string name="search_hint">Suchbegriff eingeben</string>
+    <string name="searchterm">Suchbegriff eingeben</string>
+    <string name="zip">PLZ oder Ort</string>
+    <string name="country">Land</string>
+
+    <string-array name="country_arrays">
+        <item>Deutschland</item>
+        <item>Holland</item>
+        <item>Belgien</item>
+        <item>France</item>
+        <item>Italien</item>
+        <item>England</item>
+    </string-array>
+
+    <string name="title_activity_select_country">Erweiterte Suche</string>
+    <string name="title_activity_branchen_suche">Branchensuche</string>
+    <string name="sport">Sport</string>
+    <string name="title_activity_places_by_category">PlacesByCategoryActivity</string>
+    <string name="title_activity_single_list_item">SingleListItemActivity</string>
+
+    <string-array name="plzUndOrt_array">
+        <item>41751 Viersen</item>
+        <item>41747 Viersen</item>
+        <item>41789 Krefeld</item>
+        <item>40476 Düsseldorf</item>
+    </string-array>
+
+    <string name="title_activity_places_by_search_term">PlacesBySearchTerm</string>
+    <string name="favListe">Favoriten</string>
+
+    <string-array name="actionBarTitel">
+        <item>R.string.Branche</item>
+        <item>R.string.directSearche</item>
+        <item>R.string.favListe</item>
+    </string-array>
+
+    <string name="imbiss">Restaurant</string>
+    <string name="money">Finanzen</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_all_categories">Alle Kategorien</string>
+
+</resources>
