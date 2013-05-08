@@ -2,8 +2,11 @@ package de.upaverlag.app.branchensuche;
 
 import java.util.ArrayList;
 
+
+
 import de.upaverlag.app.R;
 import android.app.ExpandableListActivity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -16,49 +19,117 @@ import android.widget.ExpandableListView.OnGroupExpandListener;
 public class AllCategories extends ExpandableListActivity{
 
 	private ExpandableListView myBigList;
-	private ArrayList<Parent> arrList;
+	private ArrayList<String> arrList;
+	private ArrayList<Object> listChild;
 	
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.big_list_layout);
-		createBigList();
+		
+		setGroupData();
+		setChildGroupData();
+
+		myBigList = getExpandableListView();
+		MyBigListAdapter mBigAdapter = new MyBigListAdapter(groupItem, childItem);
+		mBigAdapter
+				.setInflater(
+						(LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE),
+						this);
+		myBigList.setAdapter(mBigAdapter);
+		myBigList.setOnChildClickListener(this);
+//		createBigList();
 	}
 	
-	void fiilBigList() {
+/*	void fiilBigList() {
 		
-		ArrayList<Parent> abcList = new ArrayList<Parent>();
-//		ArrayList<String> arrItems = new ArrayList<String>();
+		ArrayList<String> abcList = new ArrayList<String>();
+		listChild = new ArrayList<Object>();
+		ArrayList<String> children;
 		
-		ArrayList<String> arrItems;
+		
+//		ArrayList<String> arrItems;
 		char firstLetter = 65; // Buchstabe "A"
 		char lastLetter = 90; // Buchstabe "Z"
 
 		for (int i = firstLetter; i <= lastLetter; i++) {
 			char c = (char) i;
-			Parent p = new Parent();
-			p.setTitle("" + c);
+			abcList.add("" + c);
 
-			arrItems = new ArrayList<String>();
+			children = new ArrayList<String>();
 			for (int j = 0; i <= 10; j++) {
-				arrItems.add("Item " + j);
+				children.add("Item " + j);
 			}
 			
-			p.setArrayChildren(arrItems);
-			abcList.add(p);
+			listChild.add(children);
+//			abcList.add(p);
 		}
 		
 		this.arrList=abcList;
 
 	}
+	*/
+	public void setGroupData() {
+		groupItem.add("TechNology");
+		groupItem.add("Mobile");
+		groupItem.add("Manufacturer");
+		groupItem.add("Extras");
+	}
+
+	ArrayList<String> groupItem = new ArrayList<String>();
+	ArrayList<Object> childItem = new ArrayList<Object>();
+
+	public void setChildGroupData() {
+		/**
+		 * Add Data For TecthNology
+		 */
+		ArrayList<String> child = new ArrayList<String>();
+		child.add("Java");
+		child.add("Drupal");
+		child.add(".Net Framework");
+		child.add("PHP");
+		childItem.add(child);
+
+		/**
+		 * Add Data For Mobile
+		 */
+		child = new ArrayList<String>();
+		child.add("Android");
+		child.add("Window Mobile");
+		child.add("iPHone");
+		child.add("Blackberry");
+		childItem.add(child);
+		/**
+		 * Add Data For Manufacture
+		 */
+		child = new ArrayList<String>();
+		child.add("HTC");
+		child.add("Apple");
+		child.add("Samsung");
+		child.add("Nokia");
+		childItem.add(child);
+		/**
+		 * Add Data For Extras
+		 */
+		child = new ArrayList<String>();
+		child.add("Contact Us");
+		child.add("About Us");
+		child.add("Location");
+		child.add("Root Cause");
+		childItem.add(child);
+	}
 
 	void createBigList() {
 
 		myBigList = getExpandableListView();
-
+		myBigList.setDividerHeight(2);
+//		myBigList.setGroupIndicator(null);
+		myBigList.setClickable(true);
 		
-		fiilBigList();
-		myBigList.setAdapter(new MyBigListAdapter(AllCategories.this, arrList));
+//		fiilBigList();
+		MyBigListAdapter myBigAdaper = new MyBigListAdapter(arrList, listChild );
+		myBigList.setAdapter(myBigAdaper);
+		myBigAdaper.setInflater((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE),this);
 		
 		  myBigList.setOnGroupExpandListener(new OnGroupExpandListener()
 		  {
