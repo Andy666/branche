@@ -30,12 +30,13 @@ public class AbNavigationsListener implements ActionBar.OnNavigationListener{
 			mFragment = new ExtendedSearch();
 			}
 		
-			if(menuItemTitel[itemPosition].equals("Branchensuche")){
+			if(menuItemTitel[itemPosition].equals("Hauptmenü")){
 			mFragment = new BranchenSuche();
 			}
 //			}
 		FragmentTransaction fTrans = fManager.beginTransaction();
 		fTrans.replace(R.id.placeholder, mFragment, menuItemTitel[itemPosition]);
+//		fTrans.addToBackStack(null);
 		fTrans.commit();
 		
 		return true;

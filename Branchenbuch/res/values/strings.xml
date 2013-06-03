@@ -8,7 +8,7 @@
     <color name="BlueColor">#004785</color>
     <color name="WhiteColor">#eceded</color>
 
-    <string name="Branche">Branchensuche</string>
+    <string name="Branche">Hauptmenü</string>
     <string name="directSearche">Erweiterte Suche</string>
     <string name="sucheVorort">Suche Vorort</string>
     <string name="ortWechseln">Ort wechseln</string>
@@ -58,5 +58,7 @@
     <string name="money">Finanzen</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_all_categories">Alle Kategorien</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="googleAPIkey">AIzaSyDM4Ezfpn97sWX1UWZTXpBpdnIIrAKe4_E</string>
 
 </resources>

@@ -5,6 +5,7 @@
     style="@style/DesignForText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
     android:background="@color/BackgroundYellow"
     android:gravity="left"
     android:orientation="vertical"
@@ -12,8 +13,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
-    android:tag="@string/Branche" >
+    android:tag="@string/Branche"
+    tools:context=".MainActivity" >
 
     <ImageButton
         android:id="@+id/bank"
@@ -57,16 +58,6 @@
         android:text="@string/serviceStation"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <ImageButton
-        android:id="@+id/button3"
-        style="@style/DesingForButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Restaurant"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/ic_food"
-        android:tag="@string/food" />
-
     <TextView
         android:id="@+id/textView1"
         style="@style/DesingForTextMedium"
@@ -94,21 +85,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/button3"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/searchTextField"
         android:layout_marginTop="50dp"
         android:text="@string/sucheVorort"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ToggleButton
-        android:id="@+id/toggleButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignRight="@+id/carTitel"
-        android:text="@string/Schalter"
-        android:textOff="OFF"
-        android:textOn="ON" />
 
     <ImageButton
         android:id="@+id/categoryList"
@@ -119,5 +99,103 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginTop="32dp"
         android:src="@drawable/a_bis_z" />
+
+    <TextView
+        android:id="@+id/searchText"
+        style="@style/DesingForTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:text="@string/searchterm"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/searchTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchText"
+        android:layout_below="@+id/searchText"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/searchButton"
+        style="@style/DesingForButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bank"
+        android:layout_alignTop="@+id/searchTextField"
+        android:background="@color/BlueColor"
+        android:text="Suchen" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        style="@style/DesingForButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/searchButton"
+        android:background="@color/BlueColor"
+        android:text="@string/Schalter"
+        android:textOff="OFF"
+        android:textOn="ON" />
+
+    <ImageButton
+        android:id="@+id/button3"
+        style="@style/DesingForButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Restaurant"
+        android:layout_below="@+id/toggleButton1"
+        android:layout_marginTop="145dp"
+        android:src="@drawable/ic_food"
+        android:tag="@string/food" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toggleButton1"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="60dp"
+        android:layout_toLeftOf="@+id/toggleButton1"
+        android:gravity="center"
+         android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/umkreis"
+        style="@style/DesingForTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bankTitel"
+        android:layout_alignTop="@+id/seekBar1"
+        android:layout_below="@+id/seekBar1"
+        android:layout_marginLeft="25dp"
+        android:text="0"
+         android:visibility="gone"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/DesingForTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="35dp"
+        android:text="Umkreis"
+         android:visibility="gone"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/imgMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignTop="@+id/categoryList"
+        android:src="@drawable/map" />
 
 </RelativeLayout>

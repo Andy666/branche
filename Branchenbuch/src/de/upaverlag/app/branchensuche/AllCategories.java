@@ -22,6 +22,8 @@ public class AllCategories extends ExpandableListActivity{
 	private ArrayList<String> arrList;
 	private ArrayList<Object> listChild;
 	
+	ArrayList<String> groupItem = new ArrayList<String>();
+	ArrayList<Object> childItem = new ArrayList<Object>();
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -76,9 +78,7 @@ public class AllCategories extends ExpandableListActivity{
 		groupItem.add("Extras");
 	}
 
-	ArrayList<String> groupItem = new ArrayList<String>();
-	ArrayList<Object> childItem = new ArrayList<Object>();
-
+	
 	public void setChildGroupData() {
 		/**
 		 * Add Data For TecthNology

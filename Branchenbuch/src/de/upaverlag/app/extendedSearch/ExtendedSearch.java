@@ -2,10 +2,13 @@ package de.upaverlag.app.extendedSearch;
 
 import de.upaverlag.app.R;
 import de.upaverlag.app.R.layout;
+import de.upaverlag.app.connection.PlacesByCategoryActivity;
 import de.upaverlag.app.connection.PlacesBySearchTermActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -33,9 +37,9 @@ public class ExtendedSearch extends Fragment{
     View v = inflater.inflate(R.layout.extended_search, container, false);
     
     useAutoComplete(v);
-    addListenerOnButton(v);
-    
     getValueFromTextField(v);
+    addListenerOnButton(v);
+   
     return v;
     }   
 	
@@ -100,20 +104,33 @@ public class ExtendedSearch extends Fragment{
 
 	void getValueFromTextField(View v) {
 
-		TextView searchTxt = (TextView) v.findViewById(R.id.suchbegriff);
+		EditText searchTxt = (EditText) v.findViewById(R.id.gesuchteWort);
 		suchbegriff = searchTxt.getText().toString();
 
 	}
 
 	void startNextActivity() {
 
+		FragmentManager fManager = getFragmentManager();
+		Fragment fgt = new PlacesBySearchTermActivity();
+		FragmentTransaction fTrans = fManager.beginTransaction();
+		Bundle bundle = new Bundle();
+		
+		bundle.putString("zip", plz);
+		bundle.putString("searchTerm", suchbegriff) ;
+		
+		Log.e("adresse", "ich suche: " + suchbegriff + " in " + plz);
+		fgt.setArguments(bundle);
+		fTrans.replace(R.id.placeholder, fgt);
+		fTrans.addToBackStack(null);
+		fTrans.commit();
 //		getValueFromTextField();
-		Intent myIntent = new Intent(getActivity(),
+/*		Intent myIntent = new Intent(getActivity(),
 				PlacesBySearchTermActivity.class);
 
 		myIntent.putExtra("searchTerm", suchbegriff);
 		myIntent.putExtra("zip", plz);
 		Log.e("adresse", "ich suche: " + suchbegriff + " in " + plz);
-		startActivity(myIntent);
+		startActivity(myIntent);*/
 	}
 }

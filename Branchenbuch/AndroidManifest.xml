@@ -8,6 +8,13 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
+    <permission
+        android:name="de.upaverlag.app.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" >
+    </permission>
+
+    <uses-permission android:name="de.upaverlag.app.permission.MAPS_RECEIVE" />
+
     <!-- locate device -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -25,23 +32,26 @@
     <!-- ??? -->
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <uses-library android:name="com.google.android.maps" />
 
-        <!-- <uses-library android:name="com.google.android.maps" /> -->
-
-
-        <!--
-             <meta-data
+        <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBpZNeeQXLasiniNgLTqwMci9Z9G-89-Ag" />
-        -->
-
+            android:value="AIzaSyDM4Ezfpn97sWX1UWZTXpBpdnIIrAKe4_E" />
+			
+<!-- 			"AIzaSyC46bqF_lsfI_Wn4hZ02q_DZaME6Qog3jQ" -->
+        
         <activity
-            android:name="de.upaverlag.app.SeachAppMainActivity"
+            android:name="de.upaverlag.app.SearchAppMainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,20 +63,22 @@
             android:name="de.upaverlag.app.connection.PlacesByCategoryActivity"
             android:label="@string/title_activity_places_by_category" >
         </activity>
-        <activity 
-            android:name="de.upaverlag.app.branchensuche.AllCategories" 
-            android:label="@string/title_activity_all_categories">
+        <activity
+            android:name="de.upaverlag.app.branchensuche.AllCategories"
+            android:label="@string/title_activity_all_categories" >
         </activity>
-      
-           <activity
+        <activity
             android:name="de.upaverlag.app.SingleListItemActivity"
             android:label="@string/title_activity_single_list_item" >
-        </activity> 
-    <activity
+        </activity>
+        <activity
             android:name="de.upaverlag.app.connection.PlacesBySearchTermActivity"
             android:label="@string/title_activity_places_by_search_term" >
         </activity>
-    
+        <activity
+            android:name="de.upaverlag.app.gpsLocation.ShowMeMapActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
     </application>
 
 </manifest>

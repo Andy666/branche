@@ -6,7 +6,7 @@
     android:tag="@string/directSearche">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/searchText"
         style="@style/DesingForTextSmall"
         android:layout_width="286dp"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/ortTextField"
         android:layout_alignRight="@+id/ortTextField"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/searchText"
         android:entries="@array/country_arrays"
         android:prompt="@string/country" />
 
@@ -50,7 +50,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/suchbegriff"
+        android:id="@+id/gesuchteWort"
         android:layout_width="286dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
@@ -64,7 +64,7 @@
         style="@style/DesingForTextSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/suchbegriff"
+        android:layout_alignLeft="@+id/gesuchteWort"
         android:layout_below="@+id/textView4"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
@@ -75,7 +75,7 @@
         android:id="@+id/ortTextField"
         android:layout_width="286dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/suchbegriff"
+        android:layout_alignLeft="@+id/gesuchteWort"
         android:layout_below="@+id/textView2"
         android:ems="10"
         android:imeOptions="actionDone"
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/suchbegriff"
+        android:layout_below="@+id/gesuchteWort"
         android:layout_marginTop="10dp"
         android:text="@string/zip"
         android:textAppearance="?android:attr/textAppearanceMedium" />

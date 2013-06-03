@@ -18,12 +18,6 @@ import android.widget.Toast;
 
 public class MyBigListAdapter extends BaseExpandableListAdapter {
 
-/*	public LayoutInflater inflater;
-	public ArrayList<Parent> mParent;
-	public ArrayList<String> kids;
-	public Activity activity;*/
-
-
 	public ArrayList<String> groupItem, tempChild;
 	public ArrayList<Object> Childtem = new ArrayList<Object>();
 	public LayoutInflater minflater;
